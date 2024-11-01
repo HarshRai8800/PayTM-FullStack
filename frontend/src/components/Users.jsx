@@ -58,12 +58,7 @@ navigator(`/transfer?to=${_id}`)
 }
 return(
 <>
-    <input
-        type="text"
-        placeholder="Filter"
-        onChange={e => setfilter(e.target.value)}
-        className="w-full p-3 border border-gray-300 rounded shadow-md mb-4"
-    />
+    
     <div className="flex justify-between items-center p-4 bg-blue-500 text-white rounded shadow-md">
         <div className="text-lg font-semibold">
             Your Balance: {balance}
