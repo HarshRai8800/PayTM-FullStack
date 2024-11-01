@@ -14,7 +14,7 @@ const [error,seterror] = useState("")
 const [password,setpassword]=useState()
 
 async function Setuser(){
-    console.log(firstname,lastname,username,password)
+    console.log(username,password)
 const msg =await axios.post("http://localhost:3022/api/v1/users/signin",{
   
    username,
@@ -22,7 +22,9 @@ const msg =await axios.post("http://localhost:3022/api/v1/users/signin",{
 }
 )
 if(msg.status==200){
-    navigate("/dashboard")
+  console.log(msg.data)
+  localStorage.setItem("token",msg.data.token)
+  navigate("/dashboard")
     }
     else{
         seterror(msg.data.msg)
@@ -52,7 +54,7 @@ function navuser(){
     </div>
 
     <Button onclick={Setuser} label={"ENTER"}  className="w-full bg-black text-white py-2 rounded-lg text-center font-medium hover:bg-gray-800" />
-    <Warning onClick={navuser} label={"Sigin"} warning={"Already have an account?"}/>
+    <Warning onClick={navuser} label={"Sigup"} warning={"Already have an account?"}/>
   </div>
 </div>
 
