@@ -2,7 +2,7 @@
 const mongoose = require("mongoose")
 
 
- mongoose.connect("mongodb+srv://paytm:1234@cluster0.ct1ii.mongodb.net/")
+ mongoose.connect("enter your mongodb url")
 
 
   const user =new mongoose.Schema({
